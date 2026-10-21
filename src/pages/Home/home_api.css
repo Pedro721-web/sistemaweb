@@ -1,0 +1,162 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+
+@keyframes rotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.cardapio {
+  padding: 48px 20px;
+  text-align: center;
+  background: #ffffff;
+  min-height: 100vh;
+}
+
+.cardapio h2 {
+  font-size: 1.8rem;
+  margin-bottom: 32px;
+  background: linear-gradient(135deg, #ff0066, #ff6b9d, #00ffff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  position: relative;
+  z-index: 1;
+}
+
+.cards {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 1;
+}
+
+.card {
+  background: rgba(15, 20, 40, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 28px 20px;
+  width: 240px;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 0 40px rgba(255, 0, 100, 0.2), 0 0 80px rgba(0, 255, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: -2px; left: -2px; right: -2px; bottom: -2px;
+  background: linear-gradient(45deg, #ff0066, #00ffff, #ff0066);
+  border-radius: 20px;
+  z-index: -1;
+  opacity: 0.3;
+  filter: blur(8px);
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 60px rgba(255, 0, 100, 0.4), 0 0 100px rgba(0, 255, 255, 0.2);
+}
+
+.pizza-icon { font-size: 2.5rem; }
+
+.card h3 {
+  font-size: 1.1rem;
+  color: #fff;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.card p { font-size: 0.9rem; color: rgba(255, 255, 255, 0.6); }
+
+.card strong {
+  font-size: 1.2rem;
+  background: linear-gradient(135deg, #ff0066, #00ffff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.card-buttons {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.card button {
+  flex: 1;
+  padding: 10px;
+  background: linear-gradient(135deg, #ff0066, #ff6b9d);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s;
+  box-shadow: 0 5px 15px rgba(255, 0, 100, 0.3);
+}
+
+.card button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(255, 0, 100, 0.5);
+}
+
+.card button.btn-excluir {
+  background: linear-gradient(135deg, #1a1f3a, #2d1b3d);
+  color: #00ffff;
+  border: 2px solid rgba(0, 255, 255, 0.3);
+  box-shadow: 0 5px 15px rgba(0, 255, 255, 0.1);
+}
+
+.card button.btn-excluir:hover {
+  border-color: #00ffff;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+}
+
+.card button.btn-atualizar {
+  background: linear-gradient(135deg, #1a1f3a, #2d1b3d);
+  color: #ffcc00;
+  border: 2px solid rgba(255, 204, 0, 0.3);
+  box-shadow: 0 5px 15px rgba(255, 204, 0, 0.1);
+}
+
+.card button.btn-atualizar:hover {
+  border-color: #ffcc00;
+  box-shadow: 0 0 20px rgba(255, 204, 0, 0.5);
+  transform: translateY(-2px);
+}
+
+.card button.btn-adicionar {
+  background: linear-gradient(135deg, #1a1f3a, #2d1b3d);
+  color: #00ff99;
+  border: 2px solid rgba(0, 255, 153, 0.3);
+  box-shadow: 0 5px 15px rgba(0, 255, 153, 0.1);
+}
+
+.card button.btn-adicionar:hover {
+  border-color: #00ff99;
+  box-shadow: 0 0 20px rgba(0, 255, 153, 0.5);
+  transform: translateY(-2px);
+}
+
+footer {
+  text-align: center;
+  padding: 24px;
+  background: linear-gradient(135deg, #0a0e27, #1a1f3a);
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 0.9rem;
+  border-top: 1px solid rgba(255, 0, 100, 0.2);
+}
