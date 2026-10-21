@@ -1,0 +1,109 @@
+/* Container principal da tela de Funcionário */
+.app-container {
+  max-width: 650px;
+  margin: 40px auto;
+  padding: 35px;
+  background: rgba(18, 18, 38, 0.65);
+  border: 1px solid rgba(0, 229, 255, 0.3);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 16px;
+  color: #ffffff;
+  font-family: inherit;
+}
+
+/* Título principal */
+.main-content {
+  font-size: 1.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-align: center;
+  margin-bottom: 25px;
+  color: #ff2a85;
+  text-shadow: 0 0 10px rgba(255, 42, 133, 0.4);
+}
+
+/* Agrupamento de cada rótulo e entrada */
+.form-group {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #e0e0e0;
+}
+
+/* Estilização padronizada para TODOS os inputs e selects (evita fundo branco no tel) */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="number"],
+input[type="password"],
+select,
+textarea {
+  width: 100%;
+  padding: 12px 16px;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 8px;
+  color: #ffffff;
+  font-size: 0.95rem;
+  outline: none;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+}
+
+/* Efeito ao clicar ou focar no campo */
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: #00e5ff;
+  box-shadow: 0 0 10px rgba(0, 229, 255, 0.3);
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+/* Cor do texto de exemplo (placeholder) */
+input::placeholder,
+textarea::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+/* Estilo para as opções do select no menu suspenso */
+select option {
+  background-color: #121226;
+  color: #ffffff;
+}
+
+/* Botão de envio */
+.form-group button[type="submit"] {
+  width: 100%;
+  padding: 14px;
+  margin-top: 10px;
+  background: linear-gradient(90deg, #ff2a85, #ff5252);
+  border: none;
+  border-radius: 8px;
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.form-group button[type="submit"]:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 20px rgba(255, 42, 133, 0.5);
+}
+
+.form-group button[type="submit"]:active {
+  transform: translateY(0);
+}

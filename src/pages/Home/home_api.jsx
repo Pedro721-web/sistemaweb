@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-//import './home_api.css';
+import './home.css';
  
 function HomeApi() {
     const [produtos, setProduto] = useState([]);

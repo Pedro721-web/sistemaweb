@@ -21,7 +21,7 @@ function RoutesApp(){
                 <Route path="/produto" element={<Produto />} />
                 <Route path="/funcionario" element={<Funcionario />} />
                 <Route path="/usuario" element={<Usuario />} />
-
+                
             </Route>
 
 
