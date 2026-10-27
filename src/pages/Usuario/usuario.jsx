@@ -1,43 +1,37 @@
-import { useState, useEffect } from "react";
-import axios from "axios";
+import './usuario.css';
 
+function Usuario() {
+  return (
+    <div className="usuario-container">
+      <div className="usuario-box">
+        <h2>Cadastrar Usuário</h2>
+        <form>
+          {/* Novo campo de Nome Completo */}
+          <div className="input-group">
+            <label>Nome Completo</label>
+            <input type="text" placeholder="Digite seu nome completo" />
+          </div>
 
-const Usuario = () => {
-    
-  return(
+          <div className="input-group">
+            <label>Email</label>
+            <input type="email" placeholder="Digite seu email" />
+          </div>
 
-    <div className="app-container">
-            <div className="main-content">
-               Cadastrar Usuário
-            </div>
+          <div className="input-group">
+            <label>Senha</label>
+            <input type="password" placeholder="Digite sua senha" />
+          </div>
 
-            <form>
-                 <div className="form-group">
-                    <label>Nome</label>
-                    <input type="text" placeholder="Digite seu nome" required />
-                </div>
-                <div className="form-group">
-                    <label>Email</label>
-                    <input type="text" placeholder="Digite seu email" />
-                </div>
-                <div className="form-group">
-                    <label>Senha</label>
-                    <input type="password" placeholder="Digite sua senha" required />
-                </div>
+          <div className="input-group">
+            <label>Status</label>
+            <input type="text" placeholder="Admin" />
+          </div>
 
-                <div className="form-group">
-                    <label for="select">Status</label>
-                    <select id="select" name="select">
-                        <option value="Admin">Admin</option>
-                        <option value="User">User</option>
-                    </select>
-                </div>      
-
-                <div className="form-group">
-                  <button>Cadastrar Usuário</button>
-                </div>
-            </form>
+          <button type="submit">Cadastrar Usuário</button>
+        </form>
+      </div>
     </div>
- )
+  );
 }
-export default Usuario
+
+export default Usuario;

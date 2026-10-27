@@ -7,6 +7,10 @@ function Login() {
         <h2>Login</h2>
         <form>
           <div className="input-group">
+            <label>Nome Completo</label>
+            <input type="text" placeholder="Digite seu nome completo" />
+          </div>
+          <div className="input-group">
             <label>Email</label>
             <input type="email" placeholder="Digite seu email" />
           </div>
@@ -22,7 +26,7 @@ function Login() {
             </p>
           </div>
 
-          </form>
+        </form>
       </div>
     </div>
   );
