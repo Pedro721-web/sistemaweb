@@ -1,196 +1,106 @@
+/* Container centralizado com limite de largura igual às outras telas */
 .app-container {
-    max-width: 650px;
-    margin: 20px auto;
-    padding: 20px;
-    box-sizing: border-box;
+  max-width: 650px;
+  margin: 40px auto;
+  padding: 35px;
+  background: rgba(18, 18, 38, 0.65);
+  border: 1px solid rgba(0, 229, 255, 0.3);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 16px;
+  color: #ffffff;
+  font-family: inherit;
+  box-sizing: border-box;
 }
 
+/* Título principal */
 .main-content {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 20px;
-    text-align: center;
-    background: linear-gradient(135deg, #ff416c, #ff4b2b);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+  font-size: 1.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-align: center;
+  margin-bottom: 25px;
+  color: #ff2a85;
+  text-shadow: 0 0 10px rgba(255, 42, 133, 0.4);
 }
 
-.perfil-card {
-    background: rgba(15, 23, 42, 0.8);
-    backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 16px;
-    padding: 24px; /* Reduzido levemente para otimizar espaço vertical */
-    color: #ffffff;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-    max-height: calc(100vh - 100px); /* Evita que o card saia da tela */
-    overflow-y: auto; /* Adiciona rolagem suave se houver muitos campos */
-    box-sizing: border-box;
+/* Agrupamento de cada rótulo e entrada */
+.form-group {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
-/* Personalização do scrollbar interno do card */
-.perfil-card::-webkit-scrollbar {
-    width: 6px;
-}
-.perfil-card::-webkit-scrollbar-thumb {
-    background: rgba(255, 65, 108, 0.5);
-    border-radius: 4px;
-}
-
-.perfil-header {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    margin-bottom: 20px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    padding-bottom: 15px;
+.form-group label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #e0e0e0;
 }
 
-.perfil-avatar {
-    width: 65px;
-    height: 65px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, #ff416c, #ff4b2b);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 26px;
-    font-weight: bold;
-    color: white;
-    box-shadow: 0 4px 15px rgba(255, 65, 108, 0.4);
-    flex-shrink: 0;
+/* Estilização padronizada para inputs e selects */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="number"],
+input[type="password"],
+select,
+textarea {
+  width: 100%;
+  padding: 12px 16px;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 8px;
+  color: #ffffff;
+  font-size: 0.95rem;
+  outline: none;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
 }
 
-.perfil-info-principal h2 {
-    margin: 0 0 5px 0;
-    font-size: 20px;
-    color: #fff;
+/* Efeito ao focar no campo */
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: #00e5ff;
+  box-shadow: 0 0 10px rgba(0, 229, 255, 0.3);
+  background-color: rgba(255, 255, 255, 0.08);
 }
 
-.perfil-info-principal p {
-    margin: 0 0 8px 0;
-    color: #94a3b8;
-    font-size: 14px;
+/* Cor do texto de exemplo (placeholder) */
+input::placeholder,
+textarea::placeholder {
+  color: rgba(255, 255, 255, 0.4);
 }
 
-.badge-cargo {
-    background: rgba(255, 75, 43, 0.2);
-    color: #ff766b;
-    padding: 4px 10px;
-    border-radius: 20px;
-    font-size: 12px;
-    font-weight: 600;
+/* Estilo para as opções do select */
+select option {
+  background-color: #121226;
+  color: #ffffff;
 }
 
-.perfil-detalhes {
-    display: flex;
-    flex-direction: column;
-    gap: 12px; /* Reduzido de 16px para 12px para acomodar mais campos sem quebrar */
+/* Botão de envio */
+.form-group button[type="submit"] {
+  width: 100%;
+  padding: 14px;
+  margin-top: 10px;
+  background: linear-gradient(90deg, #ff2a85, #ff5252);
+  border: none;
+  border-radius: 8px;
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
 }
 
-.info-group {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-    background: rgba(255, 255, 255, 0.03);
-    padding: 10px 14px;
-    border-radius: 8px;
-    border: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-.info-group label {
-    font-size: 11px;
-    color: #94a3b8;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-.info-group span {
-    font-size: 15px;
-    color: #f8fafc;
-    font-weight: 500;
-}
-
-.btn-editar-perfil {
-    background: linear-gradient(135deg, #ff416c, #ff4b2b);
-    color: white;
-    border: none;
-    padding: 12px;
-    border-radius: 8px;
-    font-weight: bold;
-    font-size: 14px;
-    cursor: pointer;
-    width: 100%;
-    margin-top: 15px;
-    transition: opacity 0.2s, transform 0.1s;
-}
-
-.btn-editar-perfil:hover {
-    opacity: 0.9;
-    transform: translateY(-1px);
-}
-
-/* Estilos para o formulário de edição */
-.perfil-form-edicao .form-group {
-    margin-bottom: 12px; /* Espaçamento ajustado */
-    display: flex;
-    flex-direction: column;
-}
-
-.perfil-form-edicao label {
-    margin-bottom: 6px;
-    font-size: 13px;
-    color: #cbd5e1;
-}
-
-.perfil-form-edicao input {
-    width: 100%;
-    box-sizing: border-box;
-    padding: 10px 14px;
-    border-radius: 8px;
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    background: rgba(255, 255, 255, 0.05);
-    color: #fff;
-    font-size: 14px;
-    outline: none;
-    transition: border-color 0.2s;
-}
-
-.perfil-form-edicao input:focus {
-    border-color: #ff416c;
-}
-
-/* Container de botões para ações de salvar/cancelar lado a lado */
-.botoes-acoes {
-    display: flex;
-    gap: 10px;
-    margin-top: 15px;
-}
-
-.btn-salvar {
-    background: linear-gradient(135deg, #ff416c, #ff4b2b);
-    color: white;
-    border: none;
-    padding: 12px;
-    border-radius: 8px;
-    font-weight: bold;
-    cursor: pointer;
-    flex: 1;
-    transition: opacity 0.2s;
-}
-
-.btn-cancelar {
-    background: rgba(255, 255, 255, 0.1);
-    color: white;
-    border: none;
-    padding: 12px;
-    border-radius: 8px;
-    font-weight: bold;
-    cursor: pointer;
-    flex: 1;
-    transition: background 0.2s;
-}
-
-.btn-salvar:hover, .btn-cancelar:hover {
-    opacity: 0.9;
+.form-group button[type="submit"]:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 20px rgba(255, 42, 133, 0.5);
 }

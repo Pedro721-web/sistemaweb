@@ -1,35 +1,74 @@
 import './usuario.css';
+import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
 
 function Usuario() {
+  const navigate = useNavigate();
+
+  // Estados dos campos
+  const [nome, setNome] = useState('');
+  const [email, setEmail] = useState('');
+  const [senha, setSenha] = useState('');
+  const [status, setStatus] = useState('admin');
+
+  const handleCadastro = (e) => {
+    e.preventDefault();
+
+    // Como não vamos mais usar a API, apenas simulamos o sucesso e voltamos para o login
+    alert("Usuário cadastrado com sucesso!");
+    navigate("/"); // Redireciona para a tela de login
+  };
+
   return (
-    <div className="usuario-container">
-      <div className="usuario-box">
-        <h2>Cadastrar Usuário</h2>
-        <form>
-          {/* Novo campo de Nome Completo */}
-          <div className="input-group">
-            <label>Nome Completo</label>
-            <input type="text" placeholder="Digite seu nome completo" />
-          </div>
+    <div className="app-container">
+      <h2 className="main-content">Cadastrar Usuário</h2>
+      
+      <form onSubmit={handleCadastro}>
+        <div className="form-group">
+          <label>Nome Completo</label>
+          <input 
+            type="text" 
+            placeholder="Digite seu nome completo" 
+            value={nome}
+            onChange={(e) => setNome(e.target.value)}
+            required 
+          />
+        </div>
 
-          <div className="input-group">
-            <label>Email</label>
-            <input type="email" placeholder="Digite seu email" />
-          </div>
+        <div className="form-group">
+          <label>Email</label>
+          <input 
+            type="email" 
+            placeholder="Digite seu email" 
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required 
+          />
+        </div>
 
-          <div className="input-group">
-            <label>Senha</label>
-            <input type="password" placeholder="Digite sua senha" />
-          </div>
+        <div className="form-group">
+          <label>Senha</label>
+          <input 
+            type="password" 
+            placeholder="Digite sua senha" 
+            value={senha}
+            onChange={(e) => setSenha(e.target.value)}
+            required 
+          />
+        </div>
 
-          <div className="input-group">
-            <label>Status</label>
-            <input type="text" placeholder="Admin" />
-          </div>
+        <div className="form-group">
+          <label>Status</label>
+          <select value={status} onChange={(e) => setStatus(e.target.value)}>
+            <option value="admin">Admin</option>
+            <option value="comum">Comum</option>
+          </select>
+        </div>
 
+        <div className="form-group">
           <button type="submit">Cadastrar Usuário</button>
-        </form>
-      </div>
+        </div>
+      </form>
     </div>
   );
 }

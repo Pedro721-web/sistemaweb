@@ -124,19 +124,27 @@ html, body {
 }
 
 .login-box button[type="submit"] {
-  padding: 15px;
+  padding: 0; /* Zerado para o link ocupar todo o botão perfeitamente */
   background: linear-gradient(135deg, #ff0066, #ff6b9d);
-  color: white;
   border: none;
   border-radius: 12px;
-  font-size: 18px;
-  font-weight: bold;
   cursor: pointer;
   transition: all 0.3s;
   margin-top: 10px;
+  box-shadow: 0 5px 25px rgba(255, 0, 100, 0.4);
+}
+
+/* Deixa o texto do link "ENTRAR" branco, sem sublinhado e cobrindo o botão todo */
+.login-box button[type="submit"] a {
+  display: block;
+  width: 100%;
+  padding: 15px;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 2px;
-  box-shadow: 0 5px 25px rgba(255, 0, 100, 0.4);
 }
 
 .login-box button[type="submit"]:hover {
@@ -145,44 +153,28 @@ html, body {
   box-shadow: 0 8px 30px rgba(255, 0, 100, 0.6);
 }
 
-.toggle-link {
+/* Estilização do link de cadastro no rodapé do login */
+.register-link {
   text-align: center;
   color: rgba(255, 255, 255, 0.7);
-  margin-top: 25px;
-  cursor: pointer;
-  font-size: 14px;
-  transition: all 0.3s;
-}
-
-.toggle-link:hover {
-  color: #00ffff;
-  text-shadow: 0 0 10px rgba(0, 255, 255, 0.8);
-}
-
-.logout-btn {
-  width: 100%;
-  padding: 12px;
-  background: linear-gradient(135deg, #1a1f3a, #2d1b3d);
-  color: #00ffff;
-  border: 2px solid rgba(0, 255, 255, 0.3);
-  border-radius: 12px;
-  font-size: 16px;
-  cursor: pointer;
   margin-top: 20px;
+  font-size: 14px;
+}
+
+.register-link p {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.register-link a {
+  color: #00ffff;
+  text-decoration: none;
+  font-weight: bold;
   transition: all 0.3s;
-  text-transform: uppercase;
-  letter-spacing: 1px;
 }
 
-.logout-btn:hover {
-  background: linear-gradient(135deg, #2d1b3d, #1a1f3a);
-  border-color: #00ffff;
-  box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
-  transform: translateY(-2px);
-}
-
-.token-info {
-  display: none;
+.register-link a:hover {
+  text-shadow: 0 0 10px rgba(0, 255, 255, 0.8);
+  text-decoration: underline;
 }
 
 @media (max-width: 480px) {

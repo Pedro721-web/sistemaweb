@@ -10,25 +10,30 @@ function Login() {
             <label>Nome Completo</label>
             <input type="text" placeholder="Digite seu nome completo" />
           </div>
+
           <div className="input-group">
             <label>Email</label>
             <input type="email" placeholder="Digite seu email" />
           </div>
+
           <div className="input-group">
             <label>Senha</label>
             <input type="password" placeholder="Digite sua senha" />
           </div>
-          <button type="submit"><a href="/home">Entrar</a></button>
+
+          <button type="submit">
+            <a href="/home">Entrar</a>
+          </button>
 
           <div className='register-link'>
             <p>
                 Não tem uma conta? <a href="/usuario">Cadastre-se</a>
             </p>
           </div>
-
         </form>
       </div>
     </div>
   );
 }
+
 export default Login;

@@ -94,7 +94,7 @@ function Produto() {
                     <input {...register('tipo')} type="text" placeholder="Tipo do Produto" />
                 </div>
                 <div className="form-group">
-                    <label>Descrição</label>
+                    <label>Descrição</label> 
                     <input {...register('descricao')} type="text" placeholder="Descrição do Produto" />
                 </div>
                 <div className="form-group">
